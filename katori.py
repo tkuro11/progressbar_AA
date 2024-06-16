@@ -5,8 +5,8 @@ W = 30
 HALF = W//2
 
 
-# some sort of linear algebraic discriminant,
-#  sin, cos, blah, blah, blah...
+# Discriminant Function:
+#    sin, cos, blah, blah, blah...
 def it_is_on_the_line(x,y):
     r = (x*x + y*y + t*3)/W/W*t/10
     cs, sn = math.cos(r), math.sin(r)
@@ -25,9 +25,9 @@ while True:
         line = ""   # reset buffer for a line
         for x in range(-HALF, HALF):
             if it_is_on_the_line(x,y):
-                line += "#"
+                line += "◽️"
             else:
-                line += " "
+                line += "　"
         print(line)   # output just a line
     time.sleep(0.05)
     up(W)

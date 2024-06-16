@@ -5,10 +5,12 @@ W = 30
 HALF = W//2
 
 
-# some sort of linear algebraic discriminant,
-#  sin, cos, blah, blah, blah...
+# Discriminant function which determine the shape.
+#   It is a VERY core of this program.
+#   Treaking the parameters and calculations even a little can
+#   dramatically change the resulting animation.
 def it_is_on_the_line(x,y,t):
-    r = (x*x + y*y + t*10)/W/W
+    r = (x*x + y*y + t*10)/W/W*t/100
     cs, sn = math.cos(r), math.sin(r)
     tx, ty = int(x * cs - y * sn), int(x * sn + y * cs) 
     return  tx == 0 or ty == 0 or abs(tx - ty) < 2 or abs(tx + ty) < 2
@@ -25,9 +27,9 @@ while True:
         line = ""   # reset buffer for a line
         for x in range(-HALF, HALF):
             if it_is_on_the_line(x,y,t):
-                line += "#"
+                line += "◽️"
             else:
-                line += " "
+                line += "　"
         print(line)   # output just a line
     time.sleep(0.05)
     up(W)

@@ -6,8 +6,8 @@ HALF = W//2
 
 
 # Discriminant function which determine the shape.
-#   It is a VERY core of this program.
-#   Treaking the parameters and calculations even a little can
+#   This is a VERY core of this program.
+#   Treaking the parameters and calculations here even a little can
 #   dramatically change the resulting animation.
 def it_is_on_the_line(x,y,t):
     r = (x*x + y*y + t*10)/W/W*t/100
